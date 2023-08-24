@@ -1,32 +1,37 @@
-# Prerequisites
-*.d
+#include <iostream>
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+using namespace std;
 
-# Precompiled Headers
-*.gch
-*.pch
+int main() {
+    char operador;
+    double num1, num2;
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+    cout << "Ingrese un operador (+, -, *, /): ";
+    cin >> operador;
 
-# Fortran module files
-*.mod
-*.smod
+    cout << "Ingrese dos números: ";
+    cin >> num1 >> num2;
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+    switch (operador) {
+        case '+':
+            cout << "Resultado: " << num1 + num2;
+            break;
+        case '-':
+            cout << "Resultado: " << num1 - num2;
+            break;
+        case '*':
+            cout << "Resultado: " << num1 * num2;
+            break;
+        case '/':
+            if (num2 != 0)
+                cout << "Resultado: " << num1 / num2;
+            else
+                cout << "Error: División por cero";
+            break;
+        default:
+            cout << "Operador no válido";
+            break;
+    }
 
-# Executables
-*.exe
-*.out
-*.app
+    return 0;
+}
